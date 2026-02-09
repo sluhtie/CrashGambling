@@ -56,6 +56,19 @@ src/main/java/com/crashgambling/
     └── HologramService.java
 ```
 
+## Contributing
+
+This project is public and open source. You are welcome to:
+
+- **Fork** the repository
+- **Open issues** for bugs or feature requests
+- **Submit pull requests** with fixes or improvements
+
+## Where to get the plugin
+
+- [SpigotMC](https://www.spigotmc.org/) (when published)
+- [Modrinth](https://modrinth.com/) (when published)
+
 ## License
 
-Project-specific – see repository or author.
+This project is licensed under the **MIT License** – see [LICENSE](LICENSE) for details. You may use, modify, and distribute the plugin in accordance with the license.
