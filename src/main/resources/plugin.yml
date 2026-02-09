@@ -1,0 +1,21 @@
+name: CrashGambling
+version: '1.0.0'
+main: com.crashgambling.CrashGambling
+api-version: '1.17'
+author: sluhtie
+depend: [Vault, FancyHolograms]
+folia-supported: true
+
+commands:
+  crash:
+    description: Crash gambling game commands
+    usage: /crash <bet|cashout|status|reload>
+    permission: crash.use
+
+permissions:
+  crash.use:
+    description: Use crash gambling
+    default: true
+  crash.admin:
+    description: Admin commands
+    default: op

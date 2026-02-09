@@ -1,0 +1,67 @@
+game:
+  min-players: 1
+  prestart-duration: 10
+  tick-interval: 2
+  house-edge: 0.01
+  multiplier-increment: 0.01
+  min-bet: 10.0
+  max-bet: 10000.0
+  min-cashout-multiplier: 1.50
+
+hologram:
+  hologram-id: "crash_game"
+  proximity-radius: 50
+  lines:
+    idle:
+      - "&7&lCrash Game"
+      - "&eWaiting for players..."
+    prestart:
+      - "&7&lCrash Game"
+      - "&aStarting in &e{countdown}&as..."
+      - "&7{player_count} players betting"
+    running:
+      - "&7&lCrash Game"
+      - "&6&l{multiplier}x"
+      - "&7{player_count} players active"
+    crashed:
+      - "&7&lCrash Game"
+      - "&c&lCRASHED at {multiplier}x"
+
+actionbar:
+  enabled: true
+  text: "&6⚡ &eCrash: &a&l{multiplier}x &6⚡"
+  distance: 50.0
+
+messages:
+  prefix: "&6[Crash] &r"
+  
+  bet-placed: "&aYou placed a bet of &e${amount}&a!"
+  already-bet: "&cYou already have an active bet!"
+  cannot-bet-now: "&cYou cannot bet while the game is running!"
+  bet-too-low: "&cBet must be at least &e${min}&c!"
+  bet-too-high: "&cBet cannot exceed &e${max}&c!"
+  insufficient-funds: "&cYou need &e${amount}&c but only have &e${balance}&c!"
+  bet-invalid-amount: "&cBet amount must be between &e${min}&c and &e${max}&c!"
+  bet-not-enough-money: "&cYou don't have enough money!"
+  bet-game-running: "&cYou cannot bet while the game is running!"
+  
+  cashout-success: "&aYou cashed out at &e{multiplier}x&a and won &e${amount}&a!"
+  cashout-no-bet: "&cYou don't have an active bet!"
+  cashout-already: "&cYou already cashed out!"
+  cashout-already-cashed: "&cYou already cashed out!"
+  cashout-not-running: "&cThe game is not running yet!"
+  cashout-game-not-running: "&cThe game is not running!"
+  cashout-too-early: "&cYou must wait until at least &e{min}x&c to cash out! Current: &e{current}x"
+  
+  lost: "&cYou lost &e${amount}&c! Game crashed at &e{multiplier}x&c!"
+  
+  status-idle: "&7Game Status: &eWaiting for players..."
+  status-prestart: "&7Game Status: &aStarting in {countdown}s &7(&e{player_count} players&7)"
+  status-running: "&7Game Status: &6Running at &e{multiplier}x"
+  status-bet-active: "&7Your active bet: &e${amount}"
+  status-bet-cashed: "&7You cashed out at &a{multiplier}x"
+  status-no-bet: "&7You have no active bet"
+  
+  reload-success: "&aConfiguration reloaded successfully!"
+  no-permission: "&cYou don't have permission to use this command!"
+  vault-not-found: "&cVault not found - plugin disabled!"
