@@ -1,6 +1,6 @@
 # CrashGambling
 
-A Minecraft Spigot plugin for a crash gambling minigame with economy and hologram integration.
+A Minecraft Spigot/Folia plugin for a crash gambling minigame with economy and hologram integration.
 
 **Author:** sluhtie  
 **Version:** 1.0.0  
