@@ -98,9 +98,11 @@ public class CrashCommand implements CommandExecutor, TabCompleter {
             return true;
         }
         
-        if (plugin.getEconomy().getBalance(player) < amount) {
+        double balance = plugin.getEconomy().getBalance(player);
+        if (balance < amount) {
             String message = plugin.getConfig().getString("messages.insufficient-funds")
-                .replace("{amount}", String.format("%.2f", amount));
+                .replace("{amount}", String.format("%.2f", amount))
+                .replace("{balance}", String.format("%.2f", balance));
             sender.sendMessage(msg(message));
             return true;
         }
@@ -208,13 +210,17 @@ public class CrashCommand implements CommandExecutor, TabCompleter {
     }
     
     private void sendHelp(CommandSender sender) {
-        sender.sendMessage(msg("&6&l⚡ Crash Gambling Commands ⚡"));
-        sender.sendMessage(msg("&e/crash bet <amount> &7- Place a bet"));
-        sender.sendMessage(msg("&e/crash cashout &7- Cashout during game"));
-        sender.sendMessage(msg("&e/crash status &7- View game status"));
+        List<String> helpLines = plugin.getConfig().getStringList("messages.help-lines");
+        
+        for (String line : helpLines) {
+            sender.sendMessage(line.replace("&", "§"));
+        }
         
         if (sender.hasPermission("crash.admin")) {
-            sender.sendMessage(msg("&e/crash reload &7- Reload configuration"));
+            List<String> adminHelpLines = plugin.getConfig().getStringList("messages.admin-help-lines");
+            for (String line : adminHelpLines) {
+                sender.sendMessage(line.replace("&", "§"));
+            }
         }
     }
     

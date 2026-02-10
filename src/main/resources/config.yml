@@ -35,6 +35,15 @@ actionbar:
 messages:
   prefix: "&6[Crash] &r"
   
+  help-lines:
+    - "&6&l⚡ Crash Gambling Commands ⚡"
+    - "&e/crash bet <amount> &7- Place a bet"
+    - "&e/crash cashout &7- Cashout during game"
+    - "&e/crash status &7- View game status"
+  
+  admin-help-lines:
+    - "&e/crash reload &7- Reload configuration"
+  
   bet-placed: "&aYou placed a bet of &e${amount}&a!"
   already-bet: "&cYou already have an active bet!"
   cannot-bet-now: "&cYou cannot bet while the game is running!"
